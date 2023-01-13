@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} {{ data.g.name_group }}{% endblock %}
+{% block header %} Алмаз-Антей {% endblock %}
+{% block content %}
+<tbody>
+<h3>{{ data.g.name_group }}:</h3>
+    {% for pr in data.pro %}
+                <li><a href="{% url 'product' pr.id %}">{{ pr.name_product }}</a></li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+
+
+    </tbody>
+<ul><a href="javascript:history.go(-1)">Back</a></ul>
+
+{% endblock %}

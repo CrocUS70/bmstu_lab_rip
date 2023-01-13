@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} {{ data.v.name_views }} {% endblock %}
+{% block header %} Алмаз-Антей {% endblock %}
+{% block content %}
+<tbody>
+<h3>{{ data.v.name_views }}:</h3>
+    {% for groups in data.group %}
+        <li><a href="{% url 'products' groups.id %}">{{ groups.name_group }}</a></li>
+    {% empty %}
+        <li>Список пуст</li>
+
+    {% endfor %}
+</tbody>
+<ul><a href="javascript:history.go(-1)">Back</a></ul>
+{% endblock %}

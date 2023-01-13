@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} {{ data.p.name_product }}{% endblock %}
+{% block header %} Алмаз-Антей {% endblock %}
+{% block content %}
+<tbody>
+
+<p>Название:  <b>{{ data.prod.name_product }}</b></p>
+<p>Описание:  {{ data.prod.description }}</p>
+<p>Цена:  {{ data.prod.price }} рублей</p>
+
+<ul><a href="javascript:history.go(-1)">Back</a></ul>
+</tbody>
+{% endblock %}

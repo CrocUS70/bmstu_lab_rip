@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Главная страница "Алмаз-Антей" {% endblock %}
+{% block header %} Алмаз-Антей {% endblock %}
+{% block content %}
+<tbody>
+
+    {% for viewss in data.view %}
+        <p><a href="{% url 'group_products' viewss.id %}">{{ viewss.name_views }}</a></p>
+    {% empty %}
+        <li>Список пуст</li>
+
+    {% endfor %}
+</tbody>
+
+{% endblock %}
